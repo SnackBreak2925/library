@@ -29,7 +29,7 @@
   // Uncomment to connect as root instead. More info: https://containers.dev/implementors/json_reference/#remoteUser.
   // "remoteUser": "root",
   // Use 'postCreateCommand' to run commands after the container is created.
-  "postCreateCommand": "bin/setup --skip-server",
+  "postCreateCommand": "bundle config --path vendor/bundle && bin/setup --skip-server",
   "customizations": {
     "vscode": {
       "extensions": [
@@ -46,7 +46,7 @@
       "settings": {
         "rubyLsp.bundleGemfile": "",
         "rubyLsp.rubyVersionManager": {
-          "identifier": "auto"
+          "identifier": "none"
         }
       }
     }
