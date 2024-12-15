@@ -3,13 +3,16 @@
     <div class="site-header__inner container">
       <%= link_to root_path, class: 'site-header__app-title' do %>
         <%= image_tag 'logotype.svg', class: 'site-header__logo' %>
-        <span class="site-header__app-name desktop-only">
-          <%= "ГОРОДНЕЙМСКАЯ ОБЛАСТНАЯ БИБЛИОТЕКА" %>
+        <span class="site-header__app-name desktop-only link--white">
+          ГОРОДНЕЙМСКАЯ ОБЛАСТНАЯ БИБЛИОТЕКА
         </span>
       <% end %>
       <div class="site-header__actions">
-        <button class="icon icon--burger mobile-only js-header-menu">
-        </button>
+        <% if current_user.present? %>
+          <%= current_user.email %>
+        <% else %>
+          <%= link_to 'Войти', new_user_session_path, class: "link--white" %>
+        <% end %>
       </div>
     </div>
   </div>

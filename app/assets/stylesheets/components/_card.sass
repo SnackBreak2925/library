@@ -1,0 +1,59 @@
+.card
+  border: $border
+  border-radius: 2px
+  padding: 10px 15px 15px 15px
+  display: flex
+  flex-direction: column
+  gap: 10px
+
+  &--row
+    flex-direction: row
+
+  &--bg
+    background: $color-neutral-light
+    border: none
+
+  &__header
+    display: flex
+    justify-content: space-between
+    gap: 15px
+
+    &--row
+      flex-direction: row
+      flex-grow: 1
+      width: 100%
+      +media-mobile
+        flex-direction: column-reverse
+
+  &__title
+    font-size: 20px
+
+  &__actions
+    display: flex
+    flex-wrap: wrap
+    gap: 5px
+
+    &--shrink
+      flex-shrink: 0
+
+    &--no-wrap
+      flex-wrap: nowrap
+
+    &--centered
+      align-items: center
+
+  &__content
+    flex-grow: 1
+
+  +media-tablet
+
+    &__actions
+      flex-basis: min-content
+
+  +media-mobile
+
+    &__title
+      font-size: 18px
+
+    &__actions
+      flex-basis: min-content
