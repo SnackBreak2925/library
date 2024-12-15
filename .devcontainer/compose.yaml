@@ -26,5 +26,5 @@ services:
   #   image: selenium/standalone-chromium
   #   restart: unless-stopped
 
-volumes:
-  postgres-data:
+# volumes:
+#   postgres-data:
