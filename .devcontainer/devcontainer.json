@@ -41,7 +41,9 @@
         "formulahendry.auto-rename-tag",
         "formulahendry.auto-close-tag",
         "wingrunr21.vscode-ruby",
-        "Shopify.ruby-lsp"
+        "Shopify.ruby-lsp",
+        "syler.sass-indented",
+        "oderwat.indent-rainbow"
       ],
       "settings": {
         "rubyLsp.bundleGemfile": "",

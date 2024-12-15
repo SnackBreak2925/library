@@ -22,6 +22,12 @@
   </head>
 
   <body>
-    <%= yield %>
+    <%= render 'header' %>
+    <main class="main">
+      <div class='container'>
+        <%= yield %>
+      </div>
+    </main>
+    <%= render 'footer' %>
   </body>
 </html>

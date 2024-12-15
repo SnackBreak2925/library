@@ -1,7 +1,9 @@
 source "https://rubygems.org"
 
+gem "dartsass-rails", "~> 0.5.1"
 gem "devise", "~> 4.9"
 gem "devise-jwt"
+gem "foreman"
 gem "rails", "~> 8.0.1"
 gem "propshaft"
 gem "pg", "~> 1.1"

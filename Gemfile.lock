@@ -103,6 +103,9 @@ GEM
     crass (1.0.6)
     cssbundling-rails (1.4.1)
       railties (>= 6.0.0)
+    dartsass-rails (0.5.1)
+      railties (>= 6.0.0)
+      sass-embedded (~> 1.63)
     date (3.4.1)
     debug (1.9.2)
       irb (~> 1.10)
@@ -138,11 +141,30 @@ GEM
     ffi (1.17.0-x86-linux-gnu)
     ffi (1.17.0-x86_64-darwin)
     ffi (1.17.0-x86_64-linux-gnu)
+    foreman (0.88.1)
     fugit (1.11.1)
       et-orbi (~> 1, >= 1.2.11)
       raabro (~> 1.4)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    google-protobuf (4.29.1)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.1-aarch64-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.1-arm64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.1-x86-linux)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.1-x86_64-darwin)
+      bigdecimal
+      rake (>= 13)
+    google-protobuf (4.29.1-x86_64-linux)
+      bigdecimal
+      rake (>= 13)
     i18n (1.14.6)
       concurrent-ruby (~> 1.0)
     image_processing (1.13.0)
@@ -322,6 +344,18 @@ GEM
       ffi (~> 1.12)
       logger
     rubyzip (2.3.2)
+    sass-embedded (1.83.0-aarch64-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm-linux-gnueabihf)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-arm64-darwin)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86-linux-gnu)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-darwin)
+      google-protobuf (~> 4.28)
+    sass-embedded (1.83.0-x86_64-linux-gnu)
+      google-protobuf (~> 4.28)
     securerandom (0.4.0)
     selenium-webdriver (4.27.0)
       base64 (~> 0.2)
@@ -402,9 +436,11 @@ DEPENDENCIES
   brakeman
   capybara
   cssbundling-rails
+  dartsass-rails (~> 0.5.1)
   debug
   devise (~> 4.9)
   devise-jwt
+  foreman
   image_processing (~> 1.2)
   jbuilder
   jsbundling-rails
