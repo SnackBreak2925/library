@@ -6,4 +6,8 @@ class Book < ApplicationRecord
     json = super
     json.merge!(authors: authors)
   end
+
+  def to_s
+    "#{title}, #{authors.map(&:name).join(', ')}"
+  end
 end

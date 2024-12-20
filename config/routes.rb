@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :books
   devise_for :users
   root "application#welcome"
   get "up" => "rails/health#show", as: :rails_health_check
