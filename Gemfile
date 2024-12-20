@@ -22,8 +22,9 @@ gem "thruster", require: false
 gem "image_processing", "~> 1.2"
 
 group :development, :test do
-  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
   gem "brakeman", require: false
+  gem "debug", platforms: %i[ mri windows ], require: "debug/prelude"
+  gem "faker"
   gem "ruby-lsp"
   gem "rubocop-rails-omakase", require: false
 end

@@ -10,10 +10,46 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2024_12_15_163527) do
+ActiveRecord::Schema[8.0].define(version: 2024_12_20_095026) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
   enable_extension "pgcrypto"
+
+  create_table "authors", force: :cascade do |t|
+    t.string "name"
+    t.string "surname"
+    t.string "patronymic"
+    t.string "language"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_authors_on_name"
+    t.index ["patronymic"], name: "index_authors_on_patronymic"
+    t.index ["surname"], name: "index_authors_on_surname"
+  end
+
+  create_table "book_authors", force: :cascade do |t|
+    t.bigint "book_id", null: false
+    t.bigint "author_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["author_id"], name: "index_book_authors_on_author_id"
+    t.index ["book_id"], name: "index_book_authors_on_book_id"
+  end
+
+  create_table "books", force: :cascade do |t|
+    t.string "title"
+    t.integer "year"
+    t.text "description"
+    t.float "rating"
+    t.boolean "available"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["available"], name: "index_books_on_available"
+    t.index ["description"], name: "index_books_on_description"
+    t.index ["rating"], name: "index_books_on_rating"
+    t.index ["title"], name: "index_books_on_title"
+    t.index ["year"], name: "index_books_on_year"
+  end
 
   create_table "users", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "email", default: "", null: false
@@ -40,4 +76,7 @@ ActiveRecord::Schema[8.0].define(version: 2024_12_15_163527) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
     t.index ["unlock_token"], name: "index_users_on_unlock_token", unique: true
   end
+
+  add_foreign_key "book_authors", "authors"
+  add_foreign_key "book_authors", "books"
 end
